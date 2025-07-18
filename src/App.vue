@@ -1,6 +1,4 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-// import TheWelcome from './components/TheWelcome.vue'
 import Navbar from './components/Navbar.vue';
 import Hero from './components/Hero.vue';
 import Rockets from './components/Rockets.vue';
@@ -11,15 +9,18 @@ import Contact from './components/Contact.vue';
 <template>
   <Navbar />
   <main class="max-w-4xl mx-auto scroll-smooth">
-        <section id="hero" class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 scroll-mt-40 w-full h-screen">
+        <section id="hero" class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 w-full h-screen">
              <Hero />
         </section>
-        <section id="rockets" class="p-6 my-12 scroll-mt-20">
+        <section id="rockets" class="p-6 my-12">
               <Rockets />
         </section>
-        
-        <Testimonials />
-        <Contact />
+        <section id="testimonials" class="p-6 my-12 scroll-mt-20">
+            <Testimonials />
+        </section>
+         <section id="contact" class="p-6 my-12 scroll-m-16">
+                <Contact />
+         </section>
   </main>
   <footer id="footer" class="bg-teal-700 text-white text-xl">
         <section class="max-w-4xl mx-auto p-4 flex flex-col sm:flex-row sm:justify-between">
@@ -40,7 +41,6 @@ import Contact from './components/Contact.vue';
                 <p class="text-right">All Rights Reserved</p>
             </div>
         </section>
-  </footer>
- 
+  </footer> 
 </template>
 
