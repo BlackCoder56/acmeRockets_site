@@ -8,7 +8,7 @@ import Contact from './components/Contact.vue';
 
 <template>
   <Navbar />
-  <main class="max-w-4xl mx-auto scroll-smooth">
+  <main class="max-w-4xl mx-auto">
         <section id="hero" class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 w-full h-screen">
              <Hero />
         </section>

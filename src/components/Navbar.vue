@@ -7,7 +7,7 @@
             </a>
             </h1>
             <div>
-                <button id="mobile-open-button" class="text-3xl sm:hidden focus:outline-none">
+                <button id="hamburger-button" class="text-3xl md:hidden cursor-pointer">
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-8 text-xl" aria-label="main">
@@ -17,5 +17,10 @@
                 </nav>
             </div>
         </section>        
+        <section id="mobile-menu" class="absolute top-0 bg-black w-full text-5xl flex flex-col justify-content-center">
+            <button class="text-8xl self-end px-6">
+                &times;
+            </button>
+        </section>
     </header>
 </template>
