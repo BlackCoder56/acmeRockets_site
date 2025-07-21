@@ -17,8 +17,11 @@ const toggleMenu = () => {
 
       <div>
         <!-- Hamburger button -->
-        <button @click="toggleMenu" class="text-3xl md:hidden cursor-pointer">
-          &#9776;
+        <button @click="toggleMenu" class="text-3xl md:hidden cursor-pointer relative w-8 h-8">
+          <!-- &#9776; -->
+          <div class="bg-white w-8 h-1 rounded absolute top-5 -mt-0.5
+          before:content-[''] before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-2.5
+          after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-2.5"></div>
         </button>
 
         <!-- Desktop nav -->
@@ -33,11 +36,11 @@ const toggleMenu = () => {
     <!-- Mobile Menu -->
     <section
       v-if="isMenuOpen"
-      class="absolute top-0 bg-black w-full text-white text-5xl flex flex-col justify-center origin-top animate-open-menu"
+      class="absolute top-68 bg-black w-full text-white text-5xl flex flex-col justify-center origin-top animate-open-menu"
     >
-      <button @click="toggleMenu" class="text-8xl self-end px-6">
+      <!-- <button @click="toggleMenu" class="text-8xl self-end px-6">
         &times;
-      </button>
+      </button> -->
       <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
         <a href="#hero" class="w-full text-center py-6 hover:opacity-90" @click="toggleMenu">Home</a>
         <a href="#rockets" class="w-full text-center py-6 hover:opacity-90" @click="toggleMenu">Our Rockets</a>
