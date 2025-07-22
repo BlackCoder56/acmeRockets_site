@@ -7,6 +7,9 @@ html {
 }
 
 @layer utilities {
+  .section-min-height {
+    min-height: calc(100vh - 68px);
+  }
   .toggle-btn {
     @apply 
       [&>div::before]:translate-y-0 
@@ -16,6 +19,27 @@ html {
       [&>div]:bg-transparent;
   }
 }
+
+
+/* Base utility */
+.section-min-height {
+  min-height: calc(100vh - 68px);
+}
+
+/* widescreen: aspect ratio ≥ 3/2 */
+@media (min-aspect-ratio: 3/2) {
+  .widescreen\:section-min-height {
+    min-height: calc(100vh - 68px);
+  }
+}
+
+/* tallscreen: aspect ratio ≤ 3/2 */
+@media (max-aspect-ratio: 3/2) {
+  .tallscreen\:section-min-height {
+    min-height: calc(100vh - 68px);
+  }
+}
+
 
 
 /* @import './base.css'; */

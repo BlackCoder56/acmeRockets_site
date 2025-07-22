@@ -52,7 +52,7 @@ const toggleMenu = () => {
     <section
       v-show="isMenuOpen || isClosing"
   :class="[isClosing ? 'animate-close-menu' : 'animate-open-menu']"
-      class="absolute top-68 bg-black w-full text-white text-5xl flex flex-col justify-center origin-top animate-open-menu"
+      class="absolute top-16 bg-black w-full text-white text-5xl flex flex-col justify-center origin-top animate-open-menu"
     >
       <!-- <button @click="toggleMenu" class="text-8xl self-end px-6">
         &times;

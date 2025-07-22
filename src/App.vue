@@ -9,13 +9,13 @@ import Contact from './components/Contact.vue';
 <template>
   <Navbar />
   <main class="max-w-4xl mx-auto">
-        <section id="hero" class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 w-full h-screen">
+        <section id="hero" class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 section-min-height widescreen:section-min-height tallscreen:section-min-height">
              <Hero />
         </section>
-        <section id="rockets" class="p-6 my-12">
+        <section id="rockets" class="p-6 my-12 scroll-mt-20 section-min-height widescreen:section-min-height tallscreen:section-min-height">
               <Rockets />
         </section>
-        <section id="testimonials" class="p-6 my-12 scroll-mt-20">
+        <section id="testimonials" class="p-6 my-12 scroll-mt-20 section-min-height widescreen:section-min-height tallscreen:section-min-height">
             <Testimonials />
         </section>
          <section id="contact" class="p-6 my-12 scroll-m-16">
