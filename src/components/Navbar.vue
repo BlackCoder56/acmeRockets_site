@@ -2,11 +2,22 @@
 import { ref } from 'vue'
 
 const isMenuOpen = ref(false)
+const isClosing = ref(false)
 
 const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
+  if (isMenuOpen.value) {
+    // If open, trigger closing animation
+    isClosing.value = true
+    setTimeout(() => {
+      isMenuOpen.value = false
+      isClosing.value = false
+    }, 400) // match the close-menu animation duration
+  } else {
+    isMenuOpen.value = true
+  }
 }
 </script>
+
 
 <template>
   <header class="bg-teal-700 text-white sticky top-0 z-10">
@@ -17,11 +28,12 @@ const toggleMenu = () => {
 
       <div>
         <!-- Hamburger button -->
-        <button @click="toggleMenu" class="text-3xl md:hidden cursor-pointer relative w-8 h-8">
+        <button @click="toggleMenu" 
+  :class="{ 'toggle-btn': isMenuOpen }"  class="text-3xl md:hidden cursor-pointer relative w-8 h-8">
           <!-- &#9776; -->
-          <div class="bg-white w-8 h-1 rounded absolute top-5 -mt-0.5
-          before:content-[''] before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-2.5
-          after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-2.5"></div>
+          <div class="bg-white w-8 h-1 rounded absolute top-5 -mt-0.5 transition-all duration-500
+          before:content-[''] before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-2.5 before:transition-all before:duration-500
+          after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-2.5 after:transition-all after:duration-500"></div>
         </button>
 
         <!-- Desktop nav -->
@@ -35,7 +47,8 @@ const toggleMenu = () => {
 
     <!-- Mobile Menu -->
     <section
-      v-if="isMenuOpen"
+      v-show="isMenuOpen || isClosing"
+  :class="[isClosing ? 'animate-close-menu' : 'animate-open-menu']"
       class="absolute top-68 bg-black w-full text-white text-5xl flex flex-col justify-center origin-top animate-open-menu"
     >
       <!-- <button @click="toggleMenu" class="text-8xl self-end px-6">
@@ -65,8 +78,23 @@ const toggleMenu = () => {
   }
 }
 
+@keyframes close-menu {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
 .animate-open-menu {
   animation: open-menu 0.5s ease-in-out forwards;
   transform-origin: top;
 }
+
+.animate-close-menu {
+  animation: close-menu 0.4s ease-in-out forwards;
+  transform-origin: top;
+}
+
 </style>
