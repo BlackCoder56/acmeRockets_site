@@ -31,9 +31,12 @@ const toggleMenu = () => {
         <button @click="toggleMenu" 
   :class="{ 'toggle-btn': isMenuOpen }"  class="text-3xl md:hidden cursor-pointer relative w-8 h-8">
           <!-- &#9776; -->
-          <div class="bg-white w-8 h-1 rounded absolute top-5 -mt-0.5 transition-all duration-500
-          before:content-[''] before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-2.5 before:transition-all before:duration-500
-          after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-2.5 after:transition-all after:duration-500"></div>
+          <div class="bg-white dark:bg-white w-8 h-1 rounded absolute top-5 -mt-0.5 transition-all duration-500
+    before:content-[''] before:absolute before:w-8 before:h-1 before:rounded before:bg-white before:dark:bg-white
+    before:-translate-x-4 before:-translate-y-2.5 before:transition-all before:duration-500
+    after:content-[''] after:absolute after:w-8 after:h-1 after:rounded after:bg-white after:dark:bg-white
+    after:-translate-x-4 after:translate-y-2.5 after:transition-all after:duration-500">
+  </div>
         </button>
 
         <!-- Desktop nav -->
