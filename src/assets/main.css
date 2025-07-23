@@ -10,13 +10,15 @@ html {
   .section-min-height {
     min-height: calc(100vh - 68px);
   }
+    /* Humburger Button animation */
   .toggle-btn {
     @apply 
       [&>div::before]:translate-y-0 
       [&>div::before]:rotate-45 
       [&>div::after]:translate-y-0 
       [&>div::after]:-rotate-45 
-      [&>div]:bg-transparent;
+      [&>div]:bg-transparent
+      [&>div]:rotate-[720deg]; /* full rotate of the button */
   }
 }
 
@@ -78,3 +80,4 @@ a,
     padding: 0 2rem;
   }
 } */
+  
