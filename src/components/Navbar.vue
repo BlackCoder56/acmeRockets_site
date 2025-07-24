@@ -18,7 +18,6 @@ const toggleMenu = () => {
 }
 </script>
 
-
 <template>
   <header class="bg-teal-700 text-white sticky top-0 z-10">
     <section class="max-w-4xl mx-auto p-4 flex justify-between items-center">
